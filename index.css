@@ -1,0 +1,58 @@
+body {
+    background-image: url("./Frame.png");
+}
+
+
+.my-btn {
+    position: absolute; /* or relative/fixed */
+    top: 30px;  /* distance from top of page */
+    right: 30px;
+    background-color: transparent;
+    color: white;
+    padding: 12px 24px;
+    font-size: 16px;
+    border: 2px solid white;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn {
+    position: absolute; /* or relative/fixed */
+    top: 30px;  /* distance from top of page */
+    right: 200px;
+    background-color: transparent;
+    color: white;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.btn:hover {
+    size-adjust: 10%;
+  transform: scale(1.2); 
+
+}
+
+
+img {
+    display: block;
+    width: 10vw;
+    margin: auto;
+    
+}
+
+.flexcontainer{
+    width: 100vw;
+    height: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+display:flex;
+width: 75vw;
+
+}
