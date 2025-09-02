@@ -146,11 +146,11 @@ body{
   background-image: url('./Spotify_Icon.png');
 }
 
-.spotify-icon-2 {
+.tiktok-icon-1 {
   background-image: url('./TT_IconUnclear.png');
 }
 
-.spotify-icon-2:hover {
+.tiktok-icon-1:hover {
   background-image: url('./TT_Icon.png');
 }
 
