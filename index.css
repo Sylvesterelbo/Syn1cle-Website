@@ -86,4 +86,7 @@ body, html {
   flex-shrink: 0;
 }
 
-
+.Soundbar {
+  width: 25px;
+  height: 25px;
+}
