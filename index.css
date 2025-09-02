@@ -11,6 +11,10 @@ body, html {
   height: 100%;
 }
 
+body{
+  position: relative;
+}
+
 .navbar {
   width: 100%;
   display: flex;
@@ -99,7 +103,9 @@ body, html {
   display: flex;
   width: 70px;
   height: 70px;
-  left: 100px
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
 }
 
 .SpotifyIcon {
