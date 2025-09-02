@@ -90,3 +90,14 @@ body, html {
   width: 25px;
   height: 25px;
 }
+
+.Spotify {
+  display: flex;
+  width: 70px;
+  height: 70px;
+  left: 100px
+}
+
+.SpotifyIcon {
+  width: 100px;
+}
