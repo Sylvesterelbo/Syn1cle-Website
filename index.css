@@ -2,31 +2,40 @@ body {
     background-image: url("./Frame.png");
 }
 
-
-.btn {
-    display: flex;
-    position: absolute; /* or relative/fixed */
-    top: 30px;  /* distance from top of page */
-    right: 200px;
-    background-color: transparent;
-    color: white;
-    padding: 12px 24px;
-    font-size: 16px;
-    border-radius: 12px;
-    cursor: pointer;
-    font-weight: bold;
-}
-.btn:hover {
-    size-adjust: 10%;
-  transform: scale(1.2); 
-
-}
-
 .navbar {
-    width: 50vw;
-    display: flex;
-    justify-content: center;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end; /* move items to right */
+  padding: 20px;
+  position: fixed; /* keep it at top */
+  top: 20px;
+  left: -75px;
 }
+
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;     /* row layout */
+  gap: 20px;         /* spacing between items */
+}
+
+.navbar li a {
+  text-decoration: none;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-family: "Arial", sans-serif; /* change the font */
+  font-weight: bold;
+  font-size: 20px;                /* base size */
+  transition: font-size 0.3s ease, transform 0.3s ease;
+}
+
+.navbar li a:hover {
+  font-size: 20px;                /* bigger text on hover */
+  transform: scale(1.05);         /* optional: subtle button growth */
+}
+
 
 
 img {
