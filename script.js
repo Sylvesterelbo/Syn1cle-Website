@@ -94,7 +94,7 @@ if (progress < 1) {
 
       if (progress === 1) {
         animationComplete = true;
-        document.body.style.overflow = "auto";
+        document.body.style.overflow = "hidden";
       }
     },
     { passive: false }

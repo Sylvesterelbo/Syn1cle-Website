@@ -5,6 +5,10 @@ body, html {
   background-image: url("./Frame.png");
   font-family: Arial, sans-serif;
   color: white;
+
+
+  overflow: hidden;
+  height: 100%;
 }
 
 .navbar {
