@@ -3,21 +3,8 @@ body {
 }
 
 
-.my-btn {
-    position: absolute; /* or relative/fixed */
-    top: 30px;  /* distance from top of page */
-    right: 30px;
-    background-color: transparent;
-    color: white;
-    padding: 12px 24px;
-    font-size: 16px;
-    border: 2px solid white;
-    border-radius: 12px;
-    cursor: pointer;
-    font-weight: bold;
-}
-
 .btn {
+    display: flex;
     position: absolute; /* or relative/fixed */
     top: 30px;  /* distance from top of page */
     right: 200px;
@@ -33,6 +20,12 @@ body {
     size-adjust: 10%;
   transform: scale(1.2); 
 
+}
+
+.navbar {
+    width: 50vw;
+    display: flex;
+    justify-content: center;
 }
 
 
@@ -56,3 +49,4 @@ display:flex;
 width: 75vw;
 
 }
+
