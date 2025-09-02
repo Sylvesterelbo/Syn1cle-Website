@@ -1,23 +1,31 @@
-body {
-    background-image: url("./Frame.png");
+/* Reset and base styles */
+body, html {
+  height: 100vh;
+  overflow: hidden; /* Disable native scroll initially */
+  margin: 0;
+  background-image: url("./Frame.png");
+  font-family: Arial, sans-serif;
+  color: white;
 }
 
+/* Navbar styling (keep as you had) */
 .navbar {
   width: 100%;
   display: flex;
-  justify-content: flex-end; /* move items to right */
+  justify-content: flex-end;
   padding: 20px;
-  position: fixed; /* keep it at top */
+  position: fixed;
   top: 20px;
   left: -75px;
+  z-index: 20;
 }
 
 .navbar ul {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: flex;     /* row layout */
-  gap: 20px;         /* spacing between items */
+  display: flex;
+  gap: 20px;
 }
 
 .navbar li a {
@@ -25,37 +33,67 @@ body {
   color: white;
   padding: 12px 24px;
   border-radius: 12px;
-  font-family: "Arial", sans-serif; /* change the font */
   font-weight: bold;
-  font-size: 20px;                /* base size */
+  font-size: 20px;
   transition: font-size 0.3s ease, transform 0.3s ease;
 }
 
 .navbar li a:hover {
-  font-size: 20px;                /* bigger text on hover */
-  transform: scale(1.05);         /* optional: subtle button growth */
+  font-size: 20px;
+  transform: scale(1.05);
+}
+
+/* Container holding all letters, centered horizontally */
+body, html {
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  background-image: url("./Frame.png");
+  font-family: Arial, sans-serif;
+  color: white;
 }
 
 
-
-img {
-    display: block;
-    width: 10vw;
-    margin: auto;
-    
+.flexcontainer {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* for absolute positioning of S */
 }
 
-.flexcontainer{
-    width: 100vw;
-    height: 800px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+#letter-S {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 25vw;
+  transition: width 0.5s ease;
+  z-index: 10;
+  transition: width 0.5s ease, margin-right 0.5s ease;
 }
+
+#letter-S.position-relative {
+  margin-right: 2vw; /* match gap between letters */
+}
+
 
 .container {
-display:flex;
-width: 75vw;
-
+  display: flex;
+  align-items: center;
+  gap: 2vw;
+  width: 60vw;
+  justify-content: center;
+  user-select: none;
+  left: 1000px;
 }
+
+/* Other letters start invisible */
+.floating-letter {
+  width: 10vw;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  flex-shrink: 0;
+}
+
 
