@@ -1,104 +1,90 @@
 window.addEventListener("DOMContentLoaded", () => {
-  const letters = document.querySelectorAll(".floating-letter");
-  const bigS = document.getElementById("letter-S");
+  const letters = Array.from(document.querySelectorAll(".floating-letter"));
   const container = document.getElementById("letter-container");
+  const bigS = document.getElementById("letter-S"); // NEW
   const flexcontainer = document.querySelector(".flexcontainer");
 
   let progress = 0;
   let animationComplete = false;
+  let hasStartedAnimation = false;
 
   document.body.style.overflow = "hidden";
 
-
-  bigS.style.transition = "width 0.5s ease, left 0.5s ease, top 0.5s ease, margin-right 0.5s ease, transform 0.5s ease";
-  container.style.transition = "transform 0.5s ease";
+  // Initialize styles for floating letters
   letters.forEach(letter => {
-    letter.style.transition = "opacity 0.5s ease";
+    letter.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+    letter.style.opacity = 0;
   });
 
-  function updateAnimation(progress) {
-    letters.forEach(letter => {
-      letter.style.opacity = progress === 1 ? "1" : "0";
-      letter.style.pointerEvents = progress === 1 ? "auto" : "none"; 
-      letters.forEach(letter => {
-  if (letter.id !== 'letter-S') {
-    letter.style.transform = "translateX(8vw)";
-  }
-});
+  container.style.transition = "transform 0.5s ease";
 
+  function updateAnimation(progress) {
+    letters.forEach((letter, i) => {
+      const fromLeft = i % 2 === 0; // even index from left, odd from right
+      const distanceVw = 15;
+
+      letter.style.opacity = progress;
+      letter.style.pointerEvents = progress === 1 ? "auto" : "none";
+
+      const translateX = fromLeft
+        ? (1 - progress) * -distanceVw
+        : (1 - progress) * distanceVw;
+
+      letter.style.transform = `translateX(${translateX}vw)`;
     });
 
-    const startWidth = 25;
-    const endWidth = 10;
-    const currentWidth = startWidth - (startWidth - endWidth) * progress;
-    bigS.style.width = `${currentWidth}vw`;
+    container.style.transform = `translateX(${(1 - progress) * -1}vw)`;
+  }
 
+  function animateAllInOneGo() {
+    const duration = 1200; // ms
+    const startTime = performance.now();
+    const initialProgress = progress;
 
-    const flexRect = flexcontainer.getBoundingClientRect();
-    const containerRect = container.getBoundingClientRect();
+    // Fade out the big S when animation starts
+    bigS.style.transition = "opacity 0.5s ease";
+    bigS.style.opacity = 0;
 
-    const containerOffsetLeft = containerRect.left - flexRect.left;
+    function step(currentTime) {
+      const elapsed = currentTime - startTime;
+      let t = Math.min(elapsed / duration, 1);
 
-    const vw = window.innerWidth / 100;
-    const marginVw = -8;
-    const marginPx = marginVw * vw;
+      // Ease in-out quad smoothing
+      t = t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
 
+      progress = initialProgress + (1 - initialProgress) * t;
+      updateAnimation(progress);
 
-    const targetLeftX = containerOffsetLeft + marginPx + (currentWidth * vw) / 2;
+      if (t < 1) {
+        requestAnimationFrame(step);
+      } else {
+        animationComplete = true;
+        progress = 1;
+        updateAnimation(progress);
+        document.body.style.overflow = "hidden";
 
-    const flexCenterX = flexRect.width / 2;
-    const flexCenterY = flexRect.height / 2;
+        // Hide big S completely after fade out transition ends
+        bigS.style.display = "none";
+      }
+    }
 
-
-    const targetCenterY = containerRect.top - flexRect.top + containerRect.height / 2;
-
-    const currentLeft = flexCenterX + (targetLeftX - flexCenterX) * progress;
-    const currentTop = flexCenterY + (targetCenterY - flexCenterY) * progress;
-
-if (progress < 1) {
-  bigS.style.position = "absolute";
-  bigS.style.left = `${currentLeft}px`;
-  bigS.style.top = `${currentTop}px`;
-  bigS.style.transform = "translate(-50%, -50%)";
-  bigS.style.zIndex = 10;
-  bigS.style.marginRight = "0";
-
-  container.style.transform = "translateX(-1vw)";
-} else {
-  bigS.style.position = "absolute";
-  bigS.style.left = `${targetLeftX}px`;
-  bigS.style.top = `${targetCenterY}px`;
-  bigS.style.transform = "translate(-50%, -50%)";
-  bigS.style.zIndex = 1;
-  bigS.style.marginRight = "10vw";
-
-  container.style.transform = "translateX(0)";
-  bigS.style.width = `${endWidth}vw`;
-  bigS.style.transition = "margin-right 0.5s ease, transform 0.5s ease, width 0.5s ease";
-}
-
-
+    requestAnimationFrame(step);
   }
 
   window.addEventListener(
     "wheel",
     (e) => {
-      if (animationComplete) return;
+      if (animationComplete || hasStartedAnimation) return;
 
-      e.preventDefault();
-
-      progress += e.deltaY * 0.0025;
-      progress = Math.min(Math.max(progress, 0), 1);
-
-      updateAnimation(progress);
-
-      if (progress === 1) {
-        animationComplete = true;
-        document.body.style.overflow = "hidden";
+      if (e.deltaY > 0) {
+        hasStartedAnimation = true;
+        e.preventDefault();
+        animateAllInOneGo();
       }
     },
     { passive: false }
   );
 
+  // Start with all letters hidden and off-screen
   updateAnimation(0);
 });

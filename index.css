@@ -66,52 +66,91 @@ body{
   top: 50%;
   transform: translate(-50%, -50%);
   width: 25vw;
-  transition: width 0.5s ease;
+  transition: opacity 0.5s ease, transform 0.5s ease;
   z-index: 10;
-  transition: width 0.5s ease, margin-right 0.5s ease;
+  opacity: 1;
 }
 
-#letter-S.position-relative {
-  margin-right: 2vw;
-}
+
+
 
 
 .container {
+  position: relative; /* add this */
   display: flex;
   align-items: center;
   gap: 2vw;
   width: 60vw;
   justify-content: center;
   user-select: none;
-  left: 1000vw;
+  /* left: 1000vw;  REMOVE THIS */
 }
+
 
 
 .floating-letter {
   width: 10vw;
   opacity: 0;
-  transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease, transform 0.5s ease;
   flex-shrink: 0;
 }
+
 
 .Soundbar {
   width: 25px;
   height: 25px;
 }
 
-.Spotify {
+
+
+.media {
   position: fixed;
-  right: 20px;
   bottom: 20px;
-  width: 70px;
-  height: 70px;
-  z-index: 1000;
+  right: 20px;
+  padding: 0;
+  z-index: 20;
+  display: flex;
+  gap: 15px;
+  justify-content: flex-start;
+  width: auto;
 }
 
+.media ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 15px;
+}
 
-.SpotifyIcon {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+.media li {
+  width: auto;
+}
+
+.media li a {
   display: block;
+  width: 80px;
+  height: 80px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: background-image 0.3s ease;
 }
+
+/* Default icons */
+.spotify-icon-1 {
+  background-image: url('./Spotify_IconUnclear.png');
+}
+
+.spotify-icon-1:hover {
+  background-image: url('./Spotify_Icon.png');
+}
+
+.spotify-icon-2 {
+  background-image: url('./TT_IconUnclear.png');
+}
+
+.spotify-icon-2:hover {
+  background-image: url('./TT_Icon.png');
+}
+
