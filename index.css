@@ -1,14 +1,12 @@
-/* Reset and base styles */
 body, html {
   height: 100vh;
-  overflow: hidden; /* Disable native scroll initially */
+  overflow: hidden;
   margin: 0;
   background-image: url("./Frame.png");
   font-family: Arial, sans-serif;
   color: white;
 }
 
-/* Navbar styling (keep as you had) */
 .navbar {
   width: 100%;
   display: flex;
@@ -43,15 +41,7 @@ body, html {
   transform: scale(1.05);
 }
 
-/* Container holding all letters, centered horizontally */
-body, html {
-  height: 100vh;
-  overflow: hidden;
-  margin: 0;
-  background-image: url("./Frame.png");
-  font-family: Arial, sans-serif;
-  color: white;
-}
+
 
 
 .flexcontainer {
@@ -59,7 +49,7 @@ body, html {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative; /* for absolute positioning of S */
+  position: relative; 
 }
 
 #letter-S {
@@ -74,7 +64,7 @@ body, html {
 }
 
 #letter-S.position-relative {
-  margin-right: 2vw; /* match gap between letters */
+  margin-right: 2vw;
 }
 
 
@@ -88,7 +78,7 @@ body, html {
   left: 1000vw;
 }
 
-/* Other letters start invisible */
+
 .floating-letter {
   width: 10vw;
   opacity: 0;

@@ -9,7 +9,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
   document.body.style.overflow = "hidden";
 
-  // Add transitions once
+
   bigS.style.transition = "width 0.5s ease, left 0.5s ease, top 0.5s ease, margin-right 0.5s ease, transform 0.5s ease";
   container.style.transition = "transform 0.5s ease";
   letters.forEach(letter => {
@@ -19,7 +19,7 @@ window.addEventListener("DOMContentLoaded", () => {
   function updateAnimation(progress) {
     letters.forEach(letter => {
       letter.style.opacity = progress === 1 ? "1" : "0";
-      letter.style.pointerEvents = progress === 1 ? "auto" : "none"; // optionally disable interaction until visible
+      letter.style.pointerEvents = progress === 1 ? "auto" : "none"; 
       letters.forEach(letter => {
   if (letter.id !== 'letter-S') {
     letter.style.transform = "translateX(8vw)";
@@ -33,28 +33,25 @@ window.addEventListener("DOMContentLoaded", () => {
     const currentWidth = startWidth - (startWidth - endWidth) * progress;
     bigS.style.width = `${currentWidth}vw`;
 
-    // Get bounding rectangles relative to viewport
+
     const flexRect = flexcontainer.getBoundingClientRect();
     const containerRect = container.getBoundingClientRect();
 
-    // Calculate container left offset relative to flexcontainer left
     const containerOffsetLeft = containerRect.left - flexRect.left;
 
     const vw = window.innerWidth / 100;
     const marginVw = -8;
     const marginPx = marginVw * vw;
 
-    // Calculate target left inside flexcontainer: containerOffsetLeft + margin + half width of S
+
     const targetLeftX = containerOffsetLeft + marginPx + (currentWidth * vw) / 2;
 
-    // Flexcontainer center (starting point)
     const flexCenterX = flexRect.width / 2;
     const flexCenterY = flexRect.height / 2;
 
-    // Container vertical center relative to flexcontainer
+
     const targetCenterY = containerRect.top - flexRect.top + containerRect.height / 2;
 
-    // Interpolate position
     const currentLeft = flexCenterX + (targetLeftX - flexCenterX) * progress;
     const currentTop = flexCenterY + (targetCenterY - flexCenterY) * progress;
 
@@ -68,7 +65,6 @@ if (progress < 1) {
 
   container.style.transform = "translateX(-1vw)";
 } else {
-  // Keep absolute position exactly where the animation ended:
   bigS.style.position = "absolute";
   bigS.style.left = `${targetLeftX}px`;
   bigS.style.top = `${targetCenterY}px`;
