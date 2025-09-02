@@ -105,7 +105,9 @@ body{
   bottom: 20px;
   width: 70px;
   height: 70px;
+  z-index: 1000;
 }
+
 
 .SpotifyIcon {
   width: 100%;
