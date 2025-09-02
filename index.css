@@ -85,7 +85,7 @@ body, html {
   width: 60vw;
   justify-content: center;
   user-select: none;
-  left: 1000px;
+  left: 1000vw;
 }
 
 /* Other letters start invisible */

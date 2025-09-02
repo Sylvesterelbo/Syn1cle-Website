@@ -9,9 +9,23 @@ window.addEventListener("DOMContentLoaded", () => {
 
   document.body.style.overflow = "hidden";
 
+  // Add transitions once
+  bigS.style.transition = "width 0.5s ease, left 0.5s ease, top 0.5s ease, margin-right 0.5s ease, transform 0.5s ease";
+  container.style.transition = "transform 0.5s ease";
+  letters.forEach(letter => {
+    letter.style.transition = "opacity 0.5s ease";
+  });
+
   function updateAnimation(progress) {
     letters.forEach(letter => {
-      letter.style.opacity = progress;
+      letter.style.opacity = progress === 1 ? "1" : "0";
+      letter.style.pointerEvents = progress === 1 ? "auto" : "none"; // optionally disable interaction until visible
+      letters.forEach(letter => {
+  if (letter.id !== 'letter-S') {
+    letter.style.transform = "translateX(8vw)";
+  }
+});
+
     });
 
     const startWidth = 25;
@@ -27,7 +41,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const containerOffsetLeft = containerRect.left - flexRect.left;
 
     const vw = window.innerWidth / 100;
-    const marginVw = 2;
+    const marginVw = -8;
     const marginPx = marginVw * vw;
 
     // Calculate target left inside flexcontainer: containerOffsetLeft + margin + half width of S
@@ -44,24 +58,30 @@ window.addEventListener("DOMContentLoaded", () => {
     const currentLeft = flexCenterX + (targetLeftX - flexCenterX) * progress;
     const currentTop = flexCenterY + (targetCenterY - flexCenterY) * progress;
 
-    if (progress < 1) {
-      bigS.style.position = "absolute";
-      bigS.style.left = `${currentLeft}px`;
-      bigS.style.top = `${currentTop}px`;
-      bigS.style.transform = "translate(-50%, -50%)";
-      bigS.style.zIndex = 10;
-      bigS.style.marginRight = "0"; // no margin while floating
+if (progress < 1) {
+  bigS.style.position = "absolute";
+  bigS.style.left = `${currentLeft}px`;
+  bigS.style.top = `${currentTop}px`;
+  bigS.style.transform = "translate(-50%, -50%)";
+  bigS.style.zIndex = 10;
+  bigS.style.marginRight = "0";
 
-    container.style.transform = "translateX(-1vw)";  // example: shift left 10vw
-    container.style.transition = "transform 0.5s ease"; // smooth transition
-    } else {
-      bigS.style.position = "relative";
-      bigS.style.left = "0";
-      bigS.style.top = "0";
-      bigS.style.transform = "translate(0, 0)";
-      bigS.style.zIndex = 1;
-      bigS.style.marginRight = "10vw"; // add margin to separate from next letter
-    }
+  container.style.transform = "translateX(-1vw)";
+} else {
+  // Keep absolute position exactly where the animation ended:
+  bigS.style.position = "absolute";
+  bigS.style.left = `${targetLeftX}px`;
+  bigS.style.top = `${targetCenterY}px`;
+  bigS.style.transform = "translate(-50%, -50%)";
+  bigS.style.zIndex = 1;
+  bigS.style.marginRight = "10vw";
+
+  container.style.transform = "translateX(0)";
+  bigS.style.width = `${endWidth}vw`;
+  bigS.style.transition = "margin-right 0.5s ease, transform 0.5s ease, width 0.5s ease";
+}
+
+
   }
 
   window.addEventListener(
@@ -71,7 +91,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
       e.preventDefault();
 
-      progress += e.deltaY * 0.0015;
+      progress += e.deltaY * 0.0025;
       progress = Math.min(Math.max(progress, 0), 1);
 
       updateAnimation(progress);
