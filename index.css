@@ -5,10 +5,8 @@ body, html {
   background-image: url("./images/Frame.png");
   font-family: Arial, sans-serif;
   color: white;
-
-
+  
   overflow: hidden;
-  height: 100%;
 }
 
 body{
@@ -162,3 +160,12 @@ body{
   width: auto;
   display: block;
 }
+
+.media li a img:hover {
+  height: 80px;
+  width: auto;
+  display: block;
+  content: url('./images/YT_Icon.png');
+  transition: content 0.3s ease;
+}
+
