@@ -106,7 +106,7 @@ body{
 .media {
   position: fixed;
   bottom: 20px;
-  right: 20px;
+  right: 110px;
   padding: 0;
   z-index: 20;
   display: flex;
@@ -124,13 +124,14 @@ body{
 }
 
 .media li {
-  width: auto;
+  display: flex;
+  align-items: center;
 }
 
 .media li a {
   display: block;
-  width: 80px;
   height: 80px;
+  width: 80px; /* Default width for icons */
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -154,3 +155,20 @@ body{
   background-image: url('./images/TT_Icon.png');
 }
 
+.youtube-icon-1 {
+  background-image: url('./images/YT_IconUnclear.png');
+  width: 120px; /* Adjust as needed */
+  background-size: cover; /* Fill the box */
+}
+
+.youtube-icon-1:hover {
+  background-image: url('./images/YT_Icon.png');
+  background-size: cover;
+}
+
+
+.media li a img {
+  height: 80px;
+  width: auto;
+  display: block;
+}
