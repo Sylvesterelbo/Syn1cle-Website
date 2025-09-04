@@ -1,0 +1,18 @@
+body, html {
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  background-image: url("./images/Frame.png");
+  font-family: Arial, sans-serif;
+  color: white;
+  
+  overflow: hidden;
+}
+
+   h1 {
+    border-style: solid;
+    border-width: 5px;
+    
+    border-radius: 20px;
+
+   }
