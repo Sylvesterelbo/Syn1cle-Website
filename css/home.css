@@ -97,36 +97,3 @@ body{
   background-position: center;
   transition: background-image 0.3s ease;
 }
-
-
-.spotify-icon-1 {
-  background-image: url('/images/Spotify_IconUnclear.png');
-}
-
-.spotify-icon-1:hover {
-  background-image: url('/images/Spotify_Icon.png');
-}
-
-.tiktok-icon-1 {
-  background-image: url('/images/TT_IconUnclear.png');
-}
-
-.tiktok-icon-1:hover {
-  background-image: url('/images/TT_Icon.png');
-}
-
-
-
-.media li a img {
-  height: 80px;
-  width: auto;
-  display: block;
-}
-
-.media li a img:hover {
-  height: 80px;
-  width: auto;
-  display: block;
-  content: url('/images/YT_Icon.png');
-}
-
