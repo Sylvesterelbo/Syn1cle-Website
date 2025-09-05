@@ -166,6 +166,5 @@ body{
   width: auto;
   display: block;
   content: url('./images/YT_Icon.png');
-  transition: content 0.3s ease;
 }
 
