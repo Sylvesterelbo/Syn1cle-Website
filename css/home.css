@@ -13,44 +13,7 @@ body{
   position: relative;
 }
 
-.navbar {
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  padding: 20px;
-  position: fixed;
-  top: 20px;
-  left: -75px;
-  z-index: 20;
-}
 
-.navbar ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  gap: 20px;
-}
-
-.navbar li a {
-  text-decoration: none;
-  color: white;
-  padding: 12px 24px;
-  border-radius: 12px;
-  font-weight: bold;
-  font-size: 20px;
-  transition: font-size 0.3s ease, transform 0.3s ease;
-  display: inline-block;
-}
-
-.navbar li a.active {
-  text-shadow: 0 0 10px #8400FF, 0 0 10px #8400FF;
-  transform: scale(1.5);
-}
-
-.navbar li a:hover {
-  transform: scale(2);
-}
 
 
 
