@@ -13,11 +13,6 @@ body{
   position: relative;
 }
 
-
-
-
-
-
 .flexcontainer {
   height: 100vh;
   display: flex;
@@ -42,14 +37,13 @@ body{
 
 
 .container {
-  position: relative; /* add this */
+  position: relative;
   display: flex;
   align-items: center;
   gap: 2vw;
   width: 60vw;
   justify-content: center;
   user-select: none;
-  /* left: 1000vw;  REMOVE THIS */
 }
 
 
@@ -97,7 +91,7 @@ body{
 .media li a {
   display: block;
   height: 80px;
-  width: 80px; /* Default width for icons */
+  width: 80px;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;

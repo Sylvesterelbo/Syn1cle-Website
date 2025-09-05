@@ -1,7 +1,7 @@
 window.addEventListener("DOMContentLoaded", () => {
   const letters = Array.from(document.querySelectorAll(".floating-letter"));
   const container = document.getElementById("letter-container");
-  const bigS = document.getElementById("letter-S"); // NEW
+  const bigS = document.getElementById("letter-S"); 
   const flexcontainer = document.querySelector(".flexcontainer");
 
   let progress = 0;
@@ -10,7 +10,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
   document.body.style.overflow = "hidden";
 
-  // Initialize styles for floating letters
+
   letters.forEach(letter => {
     letter.style.transition = "opacity 0.5s ease, transform 0.5s ease";
     letter.style.opacity = 0;
@@ -20,7 +20,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
   function updateAnimation(progress) {
     letters.forEach((letter, i) => {
-      const fromLeft = i % 2 === 0; // even index from left, odd from right
+      const fromLeft = i % 2 === 0;
       const distanceVw = 15;
 
       letter.style.opacity = progress;
@@ -37,11 +37,11 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 
   function animateAllInOneGo() {
-    const duration = 1200; // ms
+    const duration = 1200;
     const startTime = performance.now();
     const initialProgress = progress;
 
-    // Fade out the big S when animation starts
+
     bigS.style.transition = "opacity 0.5s ease";
     bigS.style.opacity = 0;
 
@@ -49,7 +49,6 @@ window.addEventListener("DOMContentLoaded", () => {
       const elapsed = currentTime - startTime;
       let t = Math.min(elapsed / duration, 1);
 
-      // Ease in-out quad smoothing
       t = t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
 
       progress = initialProgress + (1 - initialProgress) * t;
@@ -63,7 +62,6 @@ window.addEventListener("DOMContentLoaded", () => {
         updateAnimation(progress);
         document.body.style.overflow = "hidden";
 
-        // Hide big S completely after fade out transition ends
         bigS.style.display = "none";
       }
     }
@@ -85,6 +83,6 @@ window.addEventListener("DOMContentLoaded", () => {
     { passive: false }
   );
 
-  // Start with all letters hidden and off-screen
+
   updateAnimation(0);
 });
