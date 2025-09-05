@@ -2,7 +2,7 @@ body, html {
   height: 100vh;
   overflow: hidden;
   margin: 0;
-  background-image: url("./images/Frame.png");
+  background-image: url("/images/Frame.png");
   font-family: Arial, sans-serif;
   color: white;
   
@@ -143,19 +143,19 @@ body{
 
 
 .spotify-icon-1 {
-  background-image: url('./images/Spotify_IconUnclear.png');
+  background-image: url('/images/Spotify_IconUnclear.png');
 }
 
 .spotify-icon-1:hover {
-  background-image: url('./images/Spotify_Icon.png');
+  background-image: url('/images/Spotify_Icon.png');
 }
 
 .tiktok-icon-1 {
-  background-image: url('./images/TT_IconUnclear.png');
+  background-image: url('/images/TT_IconUnclear.png');
 }
 
 .tiktok-icon-1:hover {
-  background-image: url('./images/TT_Icon.png');
+  background-image: url('/images/TT_Icon.png');
 }
 
 
@@ -170,6 +170,6 @@ body{
   height: 80px;
   width: auto;
   display: block;
-  content: url('./images/YT_Icon.png');
+  content: url('/images/YT_Icon.png');
 }
 
