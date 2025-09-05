@@ -40,9 +40,14 @@ body{
   font-weight: bold;
   font-size: 20px;
   transition: font-size 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+}
+
+.navbar li a.active {
+  text-shadow: 0 0 10px #8400FF, 0 0 10px #8400FF;
+  transform: scale(1.5);
 }
 
 .navbar li a:hover {
-  font-size: 20px;
-  transform: scale(1.05);
+  transform: scale(2);
 }
