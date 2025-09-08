@@ -11,29 +11,46 @@ body, html {
 
 body{
   position: relative;
-  user-select: none;           /* Standard */
-  -webkit-user-select: none;   /* Safari */
-  -moz-user-select: none;      /* Firefox */
-  -ms-user-select: none;       /* IE/Edge */
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
+
 
 
 
 #spotify-embeds {
-position: relative;  /* add this */
-top: 100px;
 display: flex;
-justify-content: center;
-gap: 500px;  /* large gap */
 flex-wrap: wrap;
-padding: 20px;
+justify-content: center;
+position: relative;
+top: 100px;
+width: 90vw;
+margin: 0 auto;
+gap: 20px;
+max-height: 75vh;
+overflow-y: auto;
+padding-right: 0px;
+border-radius: 25px;
+background-color: rgba(255, 255, 255, 0.1);
+box-shadow: 0 0 10px rgba(0,0,0,0.1);
+padding-top: 20px;
 }
 
 #spotify-embeds iframe {
-width: 300px;
-height: 80px;
+width: 380px;
+height: 235px;
 border-radius: 8px;
 box-shadow: 0 0 10px rgba(0,0,0,0.3);
 border: none;
+margin: 0;
+flex-shrink: 0;
+}
+
+
+#spotify-embeds {
+scrollbar-width: thin;
+scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
 }
 
