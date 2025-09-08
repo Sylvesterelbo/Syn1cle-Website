@@ -19,12 +19,12 @@
 .media li a img {
   height: 80px;
   width: auto;
-  display: block;
+  display: flex;
 }
 
 .media li a img:hover {
   height: 80px;
   width: auto;
-  display: block;
+  display: flex;
   content: url('/images/YT_Icon.png');
 }
