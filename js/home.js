@@ -1,7 +1,7 @@
 window.addEventListener("DOMContentLoaded", () => {
   const letters = Array.from(document.querySelectorAll(".floating-letter"));
   const container = document.getElementById("letter-container");
-  const bigS = document.getElementById("letter-S"); 
+  const bigS = document.getElementById("letter-S");
   const flexcontainer = document.querySelector(".flexcontainer");
 
   let progress = 0;
@@ -9,7 +9,6 @@ window.addEventListener("DOMContentLoaded", () => {
   let hasStartedAnimation = false;
 
   document.body.style.overflow = "hidden";
-
 
   letters.forEach(letter => {
     letter.style.transition = "opacity 0.5s ease, transform 0.5s ease";
@@ -27,8 +26,8 @@ window.addEventListener("DOMContentLoaded", () => {
       letter.style.pointerEvents = progress === 1 ? "auto" : "none";
 
       const translateX = fromLeft
-        ? (1 - progress) * -distanceVw
-        : (1 - progress) * distanceVw;
+      ? (1 - progress) * -distanceVw
+      : (1 - progress) * distanceVw;
 
       letter.style.transform = `translateX(${translateX}vw)`;
     });
@@ -40,7 +39,6 @@ window.addEventListener("DOMContentLoaded", () => {
     const duration = 1200;
     const startTime = performance.now();
     const initialProgress = progress;
-
 
     bigS.style.transition = "opacity 0.5s ease";
     bigS.style.opacity = 0;
@@ -69,20 +67,13 @@ window.addEventListener("DOMContentLoaded", () => {
     requestAnimationFrame(step);
   }
 
-  window.addEventListener(
-    "wheel",
-    (e) => {
-      if (animationComplete || hasStartedAnimation) return;
-
-      if (e.deltaY > 0) {
-        hasStartedAnimation = true;
-        e.preventDefault();
-        animateAllInOneGo();
-      }
-    },
-    { passive: false }
-  );
-
+  // Start the animation after 1 second delay:
+  setTimeout(() => {
+    if (!animationComplete && !hasStartedAnimation) {
+      hasStartedAnimation = true;
+      animateAllInOneGo();
+    }
+  }, 1000);
 
   updateAnimation(0);
 });

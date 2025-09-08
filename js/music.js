@@ -8,11 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "https://open.spotify.com/track/6XUJEbLSlNqtzxND2dbDwH?si=90d6d00efb914459",
         "https://open.spotify.com/track/0z6fhLulSqj8QviICMMIqD?si=b9a6750c269b459",
         "https://open.spotify.com/track/2I14R0QtJjPF2CuHwaCSwv?si=88456cf85f5d406d",
-        "https://open.spotify.com/track/6hAedDfIOC04CzgpbGtuNM?si=5190917c1bb24a27",
-        "https://open.spotify.com/track/4MVWtWdWHNeEbPtCLSiyDy?si=a6394f889ca84e73",
-        "https://open.spotify.com/track/5opsbyEPMs1e0arisuLEW5?si=b7d37e6ba1274609",
-        "https://open.spotify.com/track/5Wghn5vglIH1vXfkP1QPU6?si=72df60b728ae4a56",
-        "https://open.spotify.com/track/5upCn7u8ZHYiN2pt3kcEDv?si=1b2f05ef953e495f"
+        "https://open.spotify.com/track/6hAedDfIOC04CzgpbGtuNM?si=5190917c1bb24a27"
     ];
 
     const container = document.getElementById('spotify-embeds');
