@@ -1,0 +1,17 @@
+/* Make each section take at least full viewport height */
+section {
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #ccc;
+    background: #f9f9f9;
+}
+
+/* Optional: alternate backgrounds to visually separate sections */
+#home-section {
+background-color: #e3f2fd; /* light blue */
+}
+
+#music-section {
+background-color: #fff3e0; /* light orange */
+}

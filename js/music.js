@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const trackId = url.split('/track/')[1].split('?')[0];
 
         const iframe = document.createElement('iframe');
-        iframe.src = `https://open.spotify.com/embed/track/${trackId}?utm_source=generator`;
+        iframe.src = `https://open.spotify.com/embed/track/${trackId}`;
         iframe.frameBorder = "0";
         iframe.allowTransparency = "true";
         iframe.allow = "encrypted-media";
