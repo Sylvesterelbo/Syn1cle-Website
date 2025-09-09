@@ -10,7 +10,7 @@ function createBars() {
 
     for (let i = 0; i < barsCount; i++) {
         const img = document.createElement('img');
-        img.src = '/images/BarTop.png';
+        img.src = '/images/BarBot.png';
         img.style.height = '100px';
         soundBar.appendChild(img);
 
@@ -35,5 +35,6 @@ function animateBar(bar) {
 }
 
 createBars();
+
 
 window.addEventListener('resize', createBars);

@@ -1,22 +1,22 @@
 html, body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  width: 100%;
-  background-color: #111;
-  position: relative;
-  overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #111;
+    position: relative;
+    overflow-x: hidden;
 }
 
 #SoundBar {
 position: fixed;
-bottom: 0;
+top: 0;
 left: 0;
 width: 100vw;
 height: 80vh;
 display: flex;
 gap: 6px;
-align-items: flex-end;
+align-items: flex-start;
 padding: 0px;
 pointer-events: none;
 z-index: 0;
@@ -31,11 +31,12 @@ object-fit: fill;
 user-select: none;
 pointer-events: none;
 display: block;
-transform-origin: bottom center;
+transform-origin: top center;
 transition-property: height;
 transition-timing-function: ease-in-out;
 transition-duration: 0.5s;
 }
+
 
 
 
