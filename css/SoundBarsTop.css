@@ -1,0 +1,41 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #111;
+  position: relative;
+  overflow-x: hidden;
+}
+
+#SoundBar {
+position: fixed;
+bottom: 0;
+left: 0;
+width: 100vw;
+height: 80vh;
+display: flex;
+gap: 6px;
+align-items: flex-end;
+padding: 10px;
+pointer-events: none;
+z-index: 0;
+background: transparent;
+overflow: hidden;
+}
+
+#SoundBar img {
+width: 60px;
+height: 100px; /* initial height */
+object-fit: fill;
+user-select: none;
+pointer-events: none;
+display: block;
+transform-origin: bottom center;
+transition-property: height;
+transition-timing-function: ease-in-out;
+transition-duration: 0.5s; /* default duration, can be overridden in JS */
+}
+
+
+
