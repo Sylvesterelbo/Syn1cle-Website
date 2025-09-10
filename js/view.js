@@ -1,4 +1,3 @@
-// Load external HTML file's body content into a container
 async function loadPage(url, containerId) {
     try {
         const response = await fetch(url);
@@ -15,7 +14,6 @@ async function loadPage(url, containerId) {
     }
 }
 
-// Load pages when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
     loadPage('home.html', 'home-section');
     loadPage('music.html', 'music-section');

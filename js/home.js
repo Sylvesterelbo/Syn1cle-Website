@@ -67,7 +67,6 @@ window.addEventListener("DOMContentLoaded", () => {
     requestAnimationFrame(step);
   }
 
-  // Start the animation after 1 second delay:
   setTimeout(() => {
     if (!animationComplete && !hasStartedAnimation) {
       hasStartedAnimation = true;
