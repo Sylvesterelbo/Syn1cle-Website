@@ -18,3 +18,4 @@ window.addEventListener('load', () => {
         overlay.style.display = 'none';
     }, 500);
 });
+
