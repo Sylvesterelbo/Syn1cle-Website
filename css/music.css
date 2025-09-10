@@ -26,23 +26,23 @@ flex-wrap: wrap;
 justify-content: center;
 position: relative;
 top: 100px;
-width: 50vw;
+width: 35vw;
 margin: 0 auto;
 gap: 0px;
 max-height: 75vh;
 overflow-y: auto;
 padding-right: 0px;
-border-radius: 25px;
-background-color: rgba(0, 0, 0, 0.5);
-box-shadow: 0 0 10px rgba(0,0,0,0.1);
+border-radius: 15px;
+background-color: rgba(30, 30, 30, 1);
+box-shadow: 0 0 20px rgba(132,0,255,1);
 padding-top: 20px;
+z-index: 5;
 }
 
 #spotify-embeds iframe {
-width: 600px;
-height: 100px;
+width: 33vw;
+height: 9.5vh;
 border-radius: 8px;
-box-shadow: 0 0 10px rgba(0,0,0,0.3);
 border: none;
 margin: 0;
 flex-shrink: 0;
